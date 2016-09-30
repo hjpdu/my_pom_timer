@@ -4,19 +4,46 @@
   var seconds = $('#seconds');
   var minutes = $('#minutes');
   var breakButton = $('#break');
+  var breaks = $('#totalbreaks');
+  var rounds = $('#totalRounds');
   var isOnBreak = false;
   var timerInterval;
-  // main functionality
+  var numOfBreaks = 0;
+  // main functionality==========================
   startButton.on('click', startTimer);
   breakButton.on('click',startBreak);
-  //function definitions
+  breakButton.on('click',countBreak);
+  //function definitions=========================
+  function countBreak(){
+    var numOfBreaksAddOne = numOfBreaks+1;
+    // clicking the button raises numOfBreaks by 1
+    var numOfBreaksCurrent = numOfBreaksAddOne++;
+    // for each + numOfBreaks, increase counter by 1
+    breaks.text(numOfBreaksCurrent);
+    var breaksText = breaks.text();
+    var numOfBreaksAsNumber = parseInt(breaksText);
+    console.log(numOfBreaksCurrent);
+    console.log(typeof numOfBreaksCurrent)
+    // if numOfBreaks is a multiple of 3, make a 15 min break button pop up
+    if(numOfBreaks % 3 === 0){}
+  }
   function startBreak (){
     // set that we are on break
     isOnBreak = true;
+    // if clicked, set that we are on break
+    // set the minutes to 15
+    // set the seconds to 00
+    // hide the break button
+    // start the timer
+
+
+
+
+
     // set the minutes to 5 minutes
-    minutes.text('05');
+    minutes.text('00');
     // set the seconds to 0 seconds
-    seconds.text('00');
+    seconds.text('03');
     // hide the break button
     breakButton.hide();
     // start the timer
@@ -45,8 +72,8 @@
         // unhide the break button
         breakButton.show();
     }   else {
-        minutes.text('25');
-        seconds.text('00');
+        minutes.text('00');
+        seconds.text('04');
         startButton.attr('disabled',false);
         isOnBreak = false;
       }
