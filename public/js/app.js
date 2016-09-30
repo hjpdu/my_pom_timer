@@ -4,6 +4,7 @@
   var seconds = $('#seconds');
   var minutes = $('#minutes');
   var breakButton = $('#break');
+  var break15Button = $('#break15');
   var breaks = $('#totalBreaks');
   var rounds = $('#totalRounds');
   var isOnBreak = false;
@@ -14,17 +15,20 @@
   breakButton.on('click',startBreak);
   breakButton.on('click',countBreak);
   //function definitions=========================
+  break15Button.hide();
   function countBreak(){
     // // clicking the button raises numOfBreaks by 1
     ++numOfBreaks;
     // using + makes number
     //for each + numOfBreaks, increase counter by 1
-    // var numOfBreaksAsNumber = parseInt(numOfBreaksCurrent);
     breaks.text(numOfBreaks);
-    console.log(numOfBreaks);
-    console.log(typeof numOfBreaks);
-    // // if numOfBreaks is a multiple of 3, make a 15 min break button pop up
-    // if(numOfBreaks % 3 === 0){}
+    //if numOfBreaks is a multiple of 3, make a 15 min break button pop up
+    if(numOfBreaks % 3 === 0){
+      break15Button.show();
+    }else{
+      break15Button.hide();
+      // otherwise, it hides the button
+    }
   }
   function startBreak (){
     // set that we are on break
@@ -43,8 +47,6 @@
     minutes.text('00');
     // set the seconds to 0 seconds
     seconds.text('03');
-    // hide the break button
-    breakButton.hide();
     // start the timer
     startTimer();
   }
