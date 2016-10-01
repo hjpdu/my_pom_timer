@@ -43,7 +43,6 @@
   function startBreak (){
     // set that we are on break
     isOnBreak = true;
-
     // if clicked, set that we are on break
     // set the minutes to 15
     // set the seconds to 00
@@ -54,6 +53,8 @@
     // set the seconds to 0 seconds
     seconds.text('03');
     // start the timer
+    breakButton.hide();
+    break15Button.hide();
     startTimer();
   }
   function startBreak15 (){
@@ -65,6 +66,7 @@
     seconds.text('05');
     // hide the break15Button button
     break15Button.hide();
+    breakButton.hide();
     // start the timer
     startTimer();
   }
@@ -85,11 +87,13 @@
       //stop!
       clearInterval(timerInterval); //this will stop the timer
       timerInterval = null;
-      if(!isOnBreak,!isOnBreak15){
+
+      if(!isOnBreak && !isOnBreak15){
         // disable the start button
         startButton.attr('disabled', true);
         // unhide the break button
         breakButton.show();
+
     }   else {
         minutes.text('00');
         seconds.text('04');
@@ -113,7 +117,6 @@
       var padSecondsTextAsNumber = pad(decreasedSecondsAsNumberByOne);
       seconds.text(padSecondsTextAsNumber); //this writes inside of the html
     }
-
     // var secondsValue = parseInt(seconds.text());
     //
     // seconds.text(pad(secondsValue - 1));
