@@ -8,18 +8,28 @@
   var breaks = $('#totalBreaks');
   var rounds = $('#totalRounds');
   var isOnBreak = false;
+  var isOnBreak15 = false;
   var timerInterval;
   var numOfBreaks = 0;
+  break15Button.hide();
   // main functionality==========================
   startButton.on('click', startTimer);
-  breakButton.on('click',startBreak);
-  breakButton.on('click',countBreak);
+  breakButton.on('click', startBreak);
+  breakButton.on('click', countBreak);
+  break15Button.on('click',startBreak15);
+  break15Button.on('click',countBreak);
   //function definitions=========================
-  break15Button.hide();
+
+  // function count15Break(){
+  //   // set is on break true
+  //   isOnBreak = true;
+  //   // set values for mins and seconds
+  //   minutes.text('00');
+  //   seconds.text('05');
+  // }
   function countBreak(){
     // // clicking the button raises numOfBreaks by 1
     ++numOfBreaks;
-    // using + makes number
     //for each + numOfBreaks, increase counter by 1
     breaks.text(numOfBreaks);
     //if numOfBreaks is a multiple of 3, make a 15 min break button pop up
@@ -33,20 +43,28 @@
   function startBreak (){
     // set that we are on break
     isOnBreak = true;
+
     // if clicked, set that we are on break
     // set the minutes to 15
     // set the seconds to 00
     // hide the break button
     // start the timer
-
-
-
-
-
     // set the minutes to 5 minutes
     minutes.text('00');
     // set the seconds to 0 seconds
     seconds.text('03');
+    // start the timer
+    startTimer();
+  }
+  function startBreak15 (){
+    // set that we are on break15
+    isOnBreak15 = true;
+    // set the minutes to 15
+    minutes.text('00');
+    // set the seconds to 00
+    seconds.text('05');
+    // hide the break15Button button
+    break15Button.hide();
     // start the timer
     startTimer();
   }
@@ -67,7 +85,7 @@
       //stop!
       clearInterval(timerInterval); //this will stop the timer
       timerInterval = null;
-      if(!isOnBreak){
+      if(!isOnBreak,!isOnBreak15){
         // disable the start button
         startButton.attr('disabled', true);
         // unhide the break button
@@ -77,6 +95,7 @@
         seconds.text('04');
         startButton.attr('disabled',false);
         isOnBreak = false;
+        isOnBreak15 = false;
       }
       return;
     }
