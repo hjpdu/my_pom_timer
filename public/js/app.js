@@ -14,7 +14,8 @@
   var numOfRounds = 0;
   break15Button.hide();
   // main functionality==========================
-  startButton.on('click', startTimer && countRound);
+  startButton.on('click', startTimer);
+  startButton.on('click',countRound);
   breakButton.on('click', startBreak);
   breakButton.on('click', countBreak);
   break15Button.on('click',startBreak15);
