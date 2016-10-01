@@ -11,9 +11,10 @@
   var isOnBreak15 = false;
   var timerInterval;
   var numOfBreaks = 0;
+  var numOfRounds = 0;
   break15Button.hide();
   // main functionality==========================
-  startButton.on('click', startTimer);
+  startButton.on('click', startTimer && countRound);
   breakButton.on('click', startBreak);
   breakButton.on('click', countBreak);
   break15Button.on('click',startBreak15);
@@ -39,6 +40,10 @@
       break15Button.hide();
       // otherwise, it hides the button
     }
+  }
+  function countRound(){
+    ++numOfRounds;
+    rounds.text(numOfRounds);
   }
   function startBreak (){
     // set that we are on break
