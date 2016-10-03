@@ -1,17 +1,42 @@
+body{
+  background-color: black;
+  color: white;
+}
 #timer {
   font-size: 1800%;
 }
 
 #start {
   font-size: 750%;
+  background-color: lightgreen;
 }
 #break{
   font-size:750%;
+  background-color: lightblue;
   display:none;
 }
+#counters{
+  width: 100%;
+  display: table;
+}
 
-#break15{}
-#roundCount{}
+#break15{
+  background-color: yellow;
+  font-size: 500%;
+}
+#roundCount{
+  display:inline-block;
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 90px;
+}
 #totalRounds{}
-#breakCount{}
+#breakCount{
+  display: inline-block;
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 90px;
+}
 #totalBreaks{}

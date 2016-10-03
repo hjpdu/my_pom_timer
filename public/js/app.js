@@ -16,6 +16,7 @@
   // main functionality==========================
   startButton.on('click', startTimer);
   startButton.on('click',countRound);
+  startButton.on('click',byeStart);
   breakButton.on('click', startBreak);
   breakButton.on('click', countBreak);
   break15Button.on('click',startBreak15);
@@ -29,6 +30,9 @@
   //   minutes.text('00');
   //   seconds.text('05');
   // }
+  function byeStart(){
+    startButton.hide();
+  }
   function countBreak(){
     // // clicking the button raises numOfBreaks by 1
     ++numOfBreaks;
@@ -37,11 +41,14 @@
     //if numOfBreaks is a multiple of 3, make a 15 min break button pop up
     if(numOfBreaks % 3 === 0){
       break15Button.show();
+      startButton.hide();
+      breakButton.hide();
     }else{
       break15Button.hide();
       // otherwise, it hides the button
     }
   }
+    
   function countRound(){
     ++numOfRounds;
     rounds.text(numOfRounds);
@@ -97,6 +104,7 @@
       if(!isOnBreak && !isOnBreak15){
         // disable the start button
         startButton.attr('disabled', true);
+        startButton.hide();
         // unhide the break button
         breakButton.show();
 
@@ -104,6 +112,7 @@
         minutes.text('00');
         seconds.text('04');
         startButton.attr('disabled',false);
+        startButton.show();
         isOnBreak = false;
         isOnBreak15 = false;
       }
