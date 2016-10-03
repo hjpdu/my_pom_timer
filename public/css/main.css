@@ -17,7 +17,7 @@ body{
 }
 #counters{
   width: 100%;
-  display: table;
+  /*display: table;*/
 }
 
 #break15{
@@ -25,18 +25,26 @@ body{
   font-size: 500%;
 }
 #roundCount{
-  display:inline-block;
-  margin: auto;
+  display:inline;
   text-align: center;
   vertical-align: middle;
-  line-height: 90px;
 }
-#totalRounds{}
+#totalRounds{
+  font-size: 400%;
+  color: lightgreen;
+  font-weight:bold;
+  text-align: center;
+  display: inline;
+}
 #breakCount{
-  display: inline-block;
-  margin: auto;
+  display: inline;
   text-align: center;
   vertical-align: middle;
-  line-height: 90px;
 }
-#totalBreaks{}
+#totalBreaks{
+  font-size: 400%;
+  color: lightblue;
+  font-weight:bold;
+  text-align: center;
+  display: inline;
+}
