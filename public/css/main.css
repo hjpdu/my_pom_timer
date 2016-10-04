@@ -2,6 +2,23 @@ body{
   background-color: black;
   color: white;
 }
+
+.yellow {
+  background-color: yellow;
+  color: grey;
+  font-weight: bold;
+
+}
+
+.breakBG {
+  background-color: lightgreen;
+}
+
+.col-centered{
+  float: none;
+  margin: 0 auto;
+  text-align: center;
+}
 #timer {
   font-size: 1800%;
 }
@@ -15,9 +32,9 @@ body{
   background-color: lightblue;
   display:none;
 }
-#counters{
+#container{
   width: 100%;
-  /*display: table;*/
+
 }
 
 #break15{
@@ -25,26 +42,22 @@ body{
   font-size: 500%;
 }
 #roundCount{
-  display:inline;
-  text-align: center;
-  vertical-align: middle;
+  display:inline-block;
 }
 #totalRounds{
   font-size: 400%;
   color: lightgreen;
   font-weight:bold;
-  text-align: center;
-  display: inline;
+  display:inline-block;
+  margin-right: 15%;
 }
 #breakCount{
-  display: inline;
-  text-align: center;
-  vertical-align: middle;
+  display:inline-block;
 }
 #totalBreaks{
   font-size: 400%;
   color: lightblue;
   font-weight:bold;
-  text-align: center;
-  display: inline;
+  display:inline-block;
+
 }

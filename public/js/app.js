@@ -7,6 +7,7 @@
   var break15Button = $('#break15');
   var breaks = $('#totalBreaks');
   var rounds = $('#totalRounds');
+  var body = $('body');
   var isOnBreak = false;
   var isOnBreak15 = false;
   var timerInterval;
@@ -17,10 +18,12 @@
   startButton.on('click', startTimer);
   startButton.on('click',countRound);
   startButton.on('click',byeStart);
+  startButton.on('click' , removeYellow);
   breakButton.on('click', startBreak);
   breakButton.on('click', countBreak);
   break15Button.on('click',startBreak15);
   break15Button.on('click',countBreak);
+  break15Button.on('click', break15Yellow);
   //function definitions=========================
 
   // function count15Break(){
@@ -30,6 +33,15 @@
   //   minutes.text('00');
   //   seconds.text('05');
   // }
+
+  function removeYellow(){
+    body.removeClass('yellow');
+  }
+
+  function break15Yellow (){
+    body.addClass('yellow');
+  }
+
   function byeStart(){
     startButton.hide();
   }
@@ -48,7 +60,7 @@
       // otherwise, it hides the button
     }
   }
-    
+
   function countRound(){
     ++numOfRounds;
     rounds.text(numOfRounds);
