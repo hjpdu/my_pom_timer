@@ -25,15 +25,6 @@
   break15Button.on('click',countBreak);
   break15Button.on('click', break15Yellow);
   //function definitions=========================
-
-  // function count15Break(){
-  //   // set is on break true
-  //   isOnBreak = true;
-  //   // set values for mins and seconds
-  //   minutes.text('00');
-  //   seconds.text('05');
-  // }
-
   function removeYellow(){
     body.removeClass('yellow');
   }
@@ -48,22 +39,20 @@
   function countBreak(){
     // // clicking the button raises numOfBreaks by 1
     ++numOfBreaks;
-    //for each + numOfBreaks, increase counter by 1
     breaks.text(numOfBreaks);
-    //if numOfBreaks is a multiple of 3, make a 15 min break button pop up
-    if(numOfBreaks % 3 === 0){
-      break15Button.show();
-      startButton.hide();
-      breakButton.hide();
-    }else{
-      break15Button.hide();
-      // otherwise, it hides the button
-    }
   }
 
   function countRound(){
     ++numOfRounds;
     rounds.text(numOfRounds);
+  if(numOfRounds % 3 === 0){
+    break15Button.show();
+    startButton.hide();
+    breakButton.hude();
+  }else{
+    break15Button.hide();
+  }
+
   }
   function startBreak (){
     // set that we are on break

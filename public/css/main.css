@@ -1,10 +1,20 @@
 body{
-  background-color: black;
+  background: black;
+  background: -webkit-radial-gradient(#404f4a, black); /* For Safari 5.1 to 6.0 */
   color: white;
+}
+
+button {
+  outline:none;
+}
+
+h4 {
+  color: grey;
 }
 
 .yellow {
   background-color: yellow;
+  background: -webkit-linear-gradient(yellow, white); /* For Safari 5.1 to 6.0 */
   color: grey;
   font-weight: bold;
 
@@ -19,8 +29,22 @@ body{
   margin: 0 auto;
   text-align: center;
 }
+
+.btn {
+  border: none;
+}
+
 #timer {
   font-size: 1800%;
+}
+
+button:hover {
+    letter-spacing: 0.05em;
+    margin-top: -5px;
+}
+
+#break:hover {
+  margin-top: -5px;
 }
 
 #start {
