@@ -26,6 +26,7 @@
   break15Button.on('click', break15Yellow);
   //function definitions=========================
   function removeYellow(){
+    // body.css('background:none');
     body.removeClass('yellow');
   }
 

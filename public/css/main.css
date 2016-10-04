@@ -1,6 +1,6 @@
 body{
   background: black;
-  background: -webkit-radial-gradient(#404f4a, black); /* For Safari 5.1 to 6.0 */
+  background: -webkit-radial-gradient(#404f4a, black); /* For Safari 5.1 to 6.0*/ 
   color: white;
 }
 
@@ -13,11 +13,12 @@ h4 {
 }
 
 .yellow {
+  background:none;
   background-color: yellow;
-  background: -webkit-linear-gradient(yellow, white); /* For Safari 5.1 to 6.0 */
+  /*background: -webkit-linear-gradient(yellow, white); /* For Safari 5.1 to 6.0 */
   color: grey;
   font-weight: bold;
-
+  /*z-index:+1;*/
 }
 
 .breakBG {
