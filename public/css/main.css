@@ -39,7 +39,7 @@ h4 {
 }
 
 button:hover {
-    letter-spacing: 0.05em;
+    /*letter-spacing: 0.05em;*/
     margin-top: -5px;
 }
 
